@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Proszę wybrać rodzaj paliwa:</p>
+
+    <label><input type="radio" name="paliwo" id="pole1" value="0">Benzyna 6,70zł/L</label><br>
+
+    <label><input type="radio" name="paliwo" id="pole2" value="0">Ropa 7,50zł/L</label><br>
+    <label><input type="text" id="litry" />Paliwo w L</label>
+
+    <br>
+    <script>
+
+        function policz() {
+            var cena;
+            if (document.getElementById("pole1").checked == true) {
+                cena = 6.7;
+            }
+            if (document.getElementById("pole2").checked == true) {
+                cena = 7.5;
+            }
+
+            var ilosc = document.getElementById("litry").value;
+            
+            var suma = ilosc*cena;
+            
+            document.getElementById("koniec").innerHTML = suma;
+        }
+    </script>
+
+    <button onclick="policz()" id="guzik">Policz</button>
+    <p>Wynik w zł</p>
+    <div id="koniec"></div>
+
+</body>
+
+</html>
